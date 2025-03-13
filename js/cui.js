@@ -1,6 +1,3 @@
-
-
-
 	/*
 	 *
 	 *	==========================================
@@ -8,13 +5,11 @@
 	 *	==========================================
 	 *
 	 *	Copyright 2020-2024 by Alessandro Ghignola
-	 *
-	 *	All rights reserved.
-	 *	Unauthorized redistribution not permitted.
+	 *	Public domain - but you're on your own. :)
 	 *
 	 */
 
-  const THEME = String ('T3C')			// default theme
+  const THEME = String ('MBW')			// default theme
     let FORCE = false				// forcing theme
     let NLAND = true				// consent landscape orientation
     let MSAYS = null				// element corresponding to Mary Lou's label note, in The Array
@@ -30,7 +25,7 @@
 
   const T = Object ({
 
-		'ACN': { name: 'ACN', fieldGradient: { obligate: 'rgba(187,187,204,.50)', optional: 'rgba(187,187,204,.33)' }, prev: 'VGA', next: 'ATR' },	// ACN
+		'ACN': { name: 'ACN', fieldGradient: { obligate: 'rgba(187,187,204,.50)', optional: 'rgba(187,187,204,.33)' }, prev: 'MBW', next: 'ATR' },	// ACN
 		'ATR': { name: 'ATR', fieldGradient: { obligate: 'rgba(176,205,255,.50)', optional: 'rgba(176,205,255,.33)' }, prev: 'ACN', next: 'C64' },	// ATR
 		'C64': { name: 'C64', fieldGradient: { obligate: 'rgba(136,122,222,.50)', optional: 'rgba(136,122,222,.33)' }, prev: 'ATR', next: 'CGA' },	// C64
 		'CGA': { name: 'CGA', fieldGradient: { obligate: 'rgba(068,255,068,.44)', optional: 'rgba(068,255,068,.22)' }, prev: 'C64', next: 'LCD' },	// CGA
@@ -40,14 +35,14 @@
 		'NBT': { name: 'NBT', fieldGradient: { obligate: 'rgba(000,255,000,.33)', optional: 'rgba(255,255,000,.33)' }, prev: 'NBL', next: 'NBR' },	// NBT
 		'NBR': { name: 'NBR', fieldGradient: { obligate: 'rgba(000,255,000,.33)', optional: 'rgba(255,255,000,.33)' }, prev: 'NBT', next: 'NDY' },	// NBR
 		'NDY': { name: 'NDY', fieldGradient: { obligate: 'rgba(068,255,068,.50)', optional: 'rgba(068,255,068,.33)' }, prev: 'NBR', next: 'P_1' },	// NDY
-		'P_1': { name: 'P_1', fieldGradient: { obligate: 'rgba(068,255,068,.44)', optional: 'rgba(068,255,068,.22)' }, prev: 'NDY', next: 'P_3' },	// P_1
+		'P_1': { name: 'P_1', fieldGradient: { obligate: 'rgba(001,001,001,.50)', optional: 'rgba(001,001,001,0.5)' }, prev: 'NDY', next: 'P_3' },	// P_1
 		'P_3': { name: 'P_3', fieldGradient: { obligate: 'rgba(255,221,000,.44)', optional: 'rgba(255,221,000,.22)' }, prev: 'P_1', next: 'T3C' },	// P_3
 		'P_4': { name: 'P_4', fieldGradient: { obligate: 'rgba(128,144,221,.50)', optional: 'rgba(114,128,204,.33)' }, prev: 'P_3', next: 'T3C' },	// P_4 ("The Array" theme)
 		'T3C': { name: 'T3C', fieldGradient: { obligate: 'rgba(255,255,255,.50)', optional: 'rgba(255,255,255,.33)' }, prev: 'P_3', next: 'TVA' },	// T3C
 		'TVA': { name: 'TVA', fieldGradient: { obligate: 'rgba(255,128,000,.50)', optional: 'rgba(255,128,000,.22)' }, prev: 'T3C', next: 'VFD' },	// TVA
 		'VFD': { name: 'VFD', fieldGradient: { obligate: 'rgba(144,188,255,.44)', optional: 'rgba(144,188,255,.22)' }, prev: 'TVA', next: 'VGA' },	// VFD
-		'VGA': { name: 'VGA', fieldGradient: { obligate: 'rgba(188,188,204,.50)', optional: 'rgba(187,187,204,.33)' }, prev: 'VFD', next: 'ACN' }	// VGA
-
+		'VGA': { name: 'VGA', fieldGradient: { obligate: 'rgba(188,188,204,.50)', optional: 'rgba(187,187,204,.33)' }, prev: 'VFD', next: 'MBW' },	// VGA
+		'MBW': { name: 'MBW', fieldGradient: { obligate: 'rgba(255,000,221,.50)', optional: 'rgba(255,167,000,.33)' }, prev: 'VGA', next: 'ACN' }	// Black and white
 	}) // dictionary and properties of known themes
 
   const cui = {
@@ -759,7 +754,8 @@
 
 						NBL: '#646480',
 						NBT: '#505060',
-						NBR: '#6F6F84'
+						NBR: '#6F6F84',
+						MBW: '#000000'
 
 					} [theme] || '#555565'
 
@@ -1048,7 +1044,6 @@
 		t_loadingImage	= be.string ($('t_loading_image') && $('t_loading_image').innerText	).or ('LOADING COVER PICTURE:')
 		t_loadingPhoto	= be.string ($('t_loading_photo') && $('t_loading_photo').innerText	).or ('LOADING PROFILE PICTURE:')
 		t_loadingPack	= be.string ($('t_loading_pack')  && $('t_loading_pack').innerText	).or ('LOADING PACKAGE:')
-		t_loadingSlides = be.string ($('t_loadingSlides') && $('t_loadingSlides').innerText	).or ('LOADING SLIDES:')
 		t_stay_on_tab	= be.string ($('t_stay_on_tab')   && $('t_stay_on_tab').innerText	).or ('PLEASE DO NOT CLOSE THIS TAB.')
 		t_talk		= be.string ($('t_talk')	  && $('t_talk').innerText		).or ('NAN')
 		t_linksomething = be.string ($('t_linksomething') && $('t_linksomething').innerText	).or ('SHARE A LINK...')
@@ -1346,8 +1341,6 @@
 			'sys/pubblica'					: 'sys/publish',
 			'sys/cancella/bozza'				: 'sys/discard/draft',
 			'sys/carica/un_immagine___'			: 'sys/post/a/new/image',
-			'sys/allestisci/una/galleria'			: 'sys/create/a/slideshow',
-			'sys/carica/immagini'				: 'sys/load/images',
 			'sys/esci'					: 'sys/sign/out',
 			'sys/crea/il/mio/account'			: 'sys/create/my/account',
 			'sys/pagina/iniziale'				: 'sys/welcome/page',
@@ -1466,7 +1459,25 @@
 				runner: 'RT-11XM\n'
 
 			},
+			
+			MBW: { // it doesnt have to make sense right??
 
+				screen: 'MODULAR-LABS RND\n\n'
+				      + 'M-25I CLOCK SET AT 45.10 GHZ\n'
+				      + 'MODE EXPERIMENTAL\n'
+				      + 'CURRENT DISK SET TO ANY\n'
+				      + 'Hi there :3\n\n'
+				      + 'LOADING NOW\n\n',
+				loader: '...' + blank,
+				system: 'DONE\n'
+				      + 'CONFIRMED UP AND RUNNING\n'
+				      + 'MODULAR-LABS v1.0\n'
+				      + 'COPYPHOTON (C) 199X\n\n',
+				prompt: 'M ->  ',
+				runner: 'FOX-3\n'
+
+			},			
+			
 			VGA: {
 
 				screen: 'LOUNIXBIOS 4.0 RELEASE 6.4\n'
@@ -1829,7 +1840,7 @@
 				  // as one pasted by the TIO clipboard (reminder: the TIO clipboard is updated to hold a page's internal link when you
 				  // pick the option to "share this page")
 
-				h = h.replace (/\b80\.style(\/acn|atr|c64|[cv]ga|lc[ds]|nb[lrt]|ndy|p_[13]|t3c|tva|vfd)?(?:(\/(?:\#|hash)\/)(.))(.*)/i, function (m, a, b, c, d) {
+				h = h.replace (/\b80\.style(\/acn|atr|c64|[cv]ga|lc[ds]|nb[lrt]|ndy|p_[13]|t3c|tva|vfd|mbw)?(?:(\/(?:\#|hash)\/)(.))(.*)/i, function (m, a, b, c, d) {
 
 				    let p = c.charAt (0)
 				    let q = p.toLowerCase ()
@@ -4839,7 +4850,6 @@
 		$('model-file').onchange = nav.loadModel
 		$('packg-file').onchange = nav.loadPackg
 		$('photo-file').onchange = nav.loadPhoto
-		$('slide-show').onchange = nav.slideShow
 
 		/*
 		 *	restore chosen style from
@@ -4849,7 +4859,7 @@
 		 */
 
 	    let u_r_i = be.string (location.pathname).or (slash)
-	    let force = be.vector (u_r_i.match (/\/(acn|atr|c64|[cv]ga|lc[ds]|nb[lrt]|ndy|p_[13]|t3c|tva|vfd)\b/)).or ([ 0 ])
+	    let force = be.vector (u_r_i.match (/\/(acn|atr|c64|[cv]ga|lc[ds]|nb[lrt]|ndy|p_[13]|t3c|tva|vfd|mbw)\b/)).or ([ 0 ])
 	    let theme = be.string (force.pop () || (localStorage && localStorage.theme)).or (THEME).toUpperCase ()
 	    let login = be.object (lr [theme]).or ({ screen: empty, loader: empty, system: empty, runner: empty })
 
