@@ -2136,7 +2136,63 @@
 		filter: sepia(1) hue-rotate(338deg) saturate(2)
 
 	}
+	
+	/*
+	 *	styles: Modularity Black and White (MBW)
+	 */
 
+	div#scn.MBW div#ball, div#scn.MBW-L div#ball { background-color: #000; border-color: #FF8; color: #FD0; text-shadow: 0 0 8px #F40; box-shadow: 0 0 4px #FD4, 0 0 1px #FF8 }
+	div#scn.MBW div#pointer, div#scn.MBW-L div#pointer { border-color: #FF8 }
+	div#scn.MBW div#pointerIn, div#scn.MBW-L div#pointerIn { border-color: #000 }
+	
+	div#scn.MBW div#cml, div#scn.MBW-L div#cml { border-left: dotted 2px #FD0 }
+	div#scn.MBW div#cmr, div#scn.MBW-L div#cmr { border-right: dotted 2px #FD0 }
+	div#txt.MBW { color: #fff; text-shadow: 0 0 8px #8f8f8f;}
+	div#cur.MBW { background-color: #ff7b008f;}
+	div#txt.MBW i { color: #FA0; text-shadow: 0 0 12px #F40, 0 0 3px #F00; font-style: normal }
+	div#txt.MBW b { color: #ff8737;text-shadow: 0 0 27px #c57f47, 0 0 3px #a35e38;}
+	div#txt.MBW em { font-style: normal }
+	div#txt.MBW div.link, div#txt.MBW div.live_link, div#txt.MBW div#linker {color: #fff;text-shadow: 0 0 42px #fff, 0 0 12px #979797, 0 0 3px #474747;}
+	div#txt.MBW div.live_link b {border-bottom: 3px solid #fffc00;}
+	div#txt.MBW a:link, div#txt.MBW a:hover, div#txt.MBW a:visited, div#txt.MBW a:active, div#txt.MBW div.semi_link { color: #ffd18a;text-shadow: 0 0 42px #aa9277, 0 0 12px #ccc599;}
+	div#txt.MBW a:link, div#txt.MBW a:hover, div#txt.MBW a:visited, div#txt.MBW a:active, div#txt.MBW div.semi_link { border-bottom: 3px solid #fffc00;}
+	div#txt.MBW div.pick { color: #FF0; text-shadow: 0 0 42px #A50, 0 0 12px #C60, 0 0 3px #FF0 }
+	div#txt.MBW div.opt { color: #DA0; text-shadow: 0 0 42px #920, 0 0 12px #B50, 0 0 3px #DA0 }
+	div#txt.MBW div#curw div.link { color: #ffffff;text-shadow: none}
+	div#txt.MBW div#curw, div#txt.MBW div#curw em, div#txt.MBW div#curw b { opacity: 1;color: #fff;background-color: #8a5400;text-shadow: none}
+	
+	div#ovs.MBW div#cpic, div#ovs.MBW div#epic { mix-blend-mode: darken }
+	div#ovs.MBW div#cpic img, div#ovs.MBW div#epic img, div#ovs.MBW div#evid { filter: brightness(1) contrast(1) saturate(1.5); }
+	
+	div#cbd.MBW, div#qtn.MBW, div#att.MBW, div#pad.MBW, div#txt.MBW div#linkertip, div#cbd.MBW div#usageNote { background-color: #FD8 }
+	div#cbd.MBW-L, div#qtn.MBW-L, div#att.MBW-L, div#pad.MBW-L, div#txt.MBW-L div#linkertip, div#cbd.MBW-L div#usageNote { background-color: #FD8 }
+	div#scn.MBW div.mark, div#scn.MBW div.markUp, div#scn.MBW div.markDown { opacity: 1; background-color: #A40 }
+	div#scn.MBW div.eraser { opacity: 1; background-color: #820 }
+	
+	div#ovs.MBW div#r_hp {
+	}
+	
+	div#hdl.MBW, div#hdr.MBW {
+		background-color: #000;
+		background-position: 0 0;
+		background-repeat: repeat;
+		background-size: 9999px 3px;
+	}
+	
+	div#hdl.MBW {
+		background-position: 98% top;
+		border-right: 1px dashed rgba(0, 0, 0, .14);
+		box-shadow: inset 14px 0 88px #222;
+		
+	}
+
+	div#hdr.MBW {
+		background-position: 98% top;
+		border-left: 1px dashed rgba(0, 0, 0, .14);
+		box-shadow: inset 14px 0 88px #222;
+
+	}
+	
 	/*
 	 *	styles: PHOSPHORIC WHITE (P_4)
 	 */
